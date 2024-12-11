@@ -1,0 +1,52 @@
+{% load static %}
+<section class="hero-section relative overflow-hidden">
+    <div class="swiper hero-slider">
+        <div class="swiper-wrapper">
+            <!-- Slide 1 -->
+
+            {% for x in hero_slides %}
+            <div class="swiper-slide hero-slide relative">
+                <img src="{{ x.image.url}}" 
+                     alt="Electrical Services" 
+                     class="w-full h-full object-cover brightness-75"
+                     loading="eager"
+                     fetchpriority="high"
+                     decoding="async">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent flex items-center justify-center">
+                    <div class="slide-content container mx-auto px-4 max-w-6xl text-center text-white">
+                        <h1 class="text-4xl md:text-7xl font-extrabold mb-6 leading-tight tracking-tight"
+                            data-aos="zoom-in"
+                            data-aos-duration="1200">
+                            <span class="bg-gradient-to-r from-blue-400 to-teal-400 text-transparent bg-clip-text">{{ x.title_highlight }}</span>
+                            <br>
+                            <span class="drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">{{ x.title_main }}</span>
+                        </h1>
+                        <p class="text-lg md:text-2xl mb-8 max-w-2xl mx-auto font-light leading-relaxed"
+                           data-aos="fade-up"
+                           data-aos-duration="1000"
+                           data-aos-delay="300">
+                            {{ x.description }}
+                            <span class="font-medium text-blue-300">{{ x.description_highlight }}</span>
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center"
+                             data-aos="flip-up"
+                             data-aos-duration="1000"
+                             data-aos-delay="600">
+                            <a href="{{ x.button_url }}" 
+                               class="group inline-flex items-center justify-center bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-[0_8px_16px_rgba(59,130,246,0.5)]">
+                                <span class="font-semibold">{{x.button_text}}</span>
+                                <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {% endfor %}
+ 
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+</section>

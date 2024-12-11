@@ -1,0 +1,100 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EPC - Your trusted partner for electrical and plumbing solutions">
+    
+    <!-- Title and Favicon -->
+    <title>EPC - ElecPlumb City</title>
+    <link rel="shortcut icon" href="{% static '/image/favicon.png' %}" type="image/x-icon">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="{% static '/css/output.css'%}">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+    <!-- Add Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    
+    <!-- Style -->
+     <link rel="stylesheet" href="{% static './css/style.css' %}">
+     <link rel="stylesheet" href="{% static '/css/animation.css' %}">
+
+ 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+     
+</head>
+<body class="font-inter">
+
+    {% if messages%}
+    <script>
+        {% for x in messages%}
+        alert("{{x}}")
+        {% endfor %}
+    </script>
+    {% endif %}
+
+    <!-- Top Header Section -->
+{% include 'includes/header.html' %}
+
+<!--Hero Section-->
+{% include 'includes/hero.html' %}
+
+<!-- Services Section - Mobile Optimized -->
+{% include 'includes/service.html' %}
+
+
+<!-- Why Choose Us Section -->
+{% include 'includes/whychooseus.html'%}
+
+
+
+<!-- About Section -->
+{% include 'includes/aboutus.html'%}
+
+<!-- Our Teams-->
+<!-- Enhanced Team Section -->
+
+{% include 'includes/ourteams.html'%}
+
+
+
+
+<!-- Contact Section -->
+{% include 'includes/contact.html'%}
+
+
+<!-- Footer Section -->
+{% include 'includes/footer.html'%}
+
+ <!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+     <!-- Cutome JS -->
+<script defer src="{% static '/js/index.js' %}"></script>
+
+    
+    <!-- Add Swiper JS before closing body tag -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Animation Js-->
+     <script defer src="{% static '/js/animation.js'%}" ></script>
+
+</body>
+</html>
